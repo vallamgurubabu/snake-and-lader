@@ -14,6 +14,7 @@ function App() {
   const [diceRoll, setDiceRoll] = useState(null); 
   const [winner, setWinner] = useState(''); 
   const diceImages = [d1, d2, d3, d4, d5, d6];
+  const audio = new Audio(snakeSound);
   const snakes = {
     97: 78,
     95: 56,
@@ -23,7 +24,6 @@ function App() {
     32: 10,
     36: 6,
   };
-  const audio = new Audio(snakeSound);
   const ladders = {
     1: 38,
     4: 14,
@@ -36,7 +36,7 @@ function App() {
   };
 
   const rollDice = () => {
-    if (winner) return; // Stop game if there's a winner
+    if (winner) return;
 
     const dice = Math.floor(Math.random() * 6) + 1; // Random dice roll between 1 and 6
     setDiceRoll(dice);
@@ -119,7 +119,6 @@ function App() {
           </div>
         ))}
       </div>
-
       <div className="game-info">
         <p>Player {currentPlayer}'s Turn</p>
         {winner && <p className="winner">{winner}</p>}
