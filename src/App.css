@@ -1,38 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap');
+
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p{
+  font-weight: bolder;
+}
+h1 {
+  font-family: "Sixtyfour Convergence", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "BLED" 0, "SCAN" 0, "XELA" 0, "YELA" 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.board {
+  display: grid;
+  background-image: url("./images/snake\ ladder.png"); /* Adjust the path */
+  background-size: cover; /* Ensures the image covers the board area */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevents image repetition */
+  grid-template-columns: repeat(10, 50px); /* 10 columns */
+  grid-gap: 2px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 20px auto;
+  border: 5px solid #333; /* Adds a visible border around the board */
+  box-sizing: border-box; /* Ensures the border is included in the element’s total width/height */
+  width: 520px; /* Adjust width to fit 10 columns with gap and border */
+  height: 520px; /* Adjust height to make the board a square */
 }
 
-.App-link {
-  color: #61dafb;
+.cell {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.player1 img,
+.player2 img {
+  width: 30px;
+  height: 30px;
+  border-radius: 8%;
+}
+
+.snake,
+.ladder {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+}
+
+.game-info {
+  margin-top: 20px;
+}
+
+.winner {
+  font-size: 1.5em;
+  font-weight: bolder;
+  color: green;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .board {
+    width: 90vw; /* Full width on mobile */
+    height: auto; /* Let the height adjust automatically */
+    grid-template-columns: repeat(10, 8.5vw); /* Responsive columns */
+    grid-gap: 1px; /* Smaller gaps */
   }
-  to {
-    transform: rotate(360deg);
+
+  .cell {
+    width: 8vw; /* Cell width */
+    height: 8vw; /* Cell height */
+  }
+
+  .player1 img,
+  .player2 img {
+    width: 6vw; /* Responsive player size */
+    height: 6vw;
+  }
+
+  h1 {
+    font-size: 1.8em; /* Smaller heading on mobile */
+  }
+
+  .winner {
+    font-size: 1.2em; /* Smaller winner text */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5em; /* Further decrease heading size */
+  }
+
+  .game-info {
+    margin-top: 10px; /* Reduce margin on mobile */
   }
 }
