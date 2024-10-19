@@ -8,14 +8,12 @@ import d5 from './images/dice-six-faces-five.png';
 import d6 from './images/dice-six-faces-six.png';
 import snakeSound from './sounds/snake-hiss-95241.mp3'
 
-const diceImages = [d1, d2, d3, d4, d5, d6];
-
 function App() {
-  const [positions, setPositions] = useState([1, 1]); // Start both players at position 1
-  const [currentPlayer, setCurrentPlayer] = useState(1); // Player 1 starts
-  const [diceRoll, setDiceRoll] = useState(null); // Dice result
-  const [winner, setWinner] = useState(''); // Game winner
-
+  const [positions, setPositions] = useState([0, 0]);
+  const [currentPlayer, setCurrentPlayer] = useState(1); 
+  const [diceRoll, setDiceRoll] = useState(null); 
+  const [winner, setWinner] = useState(''); 
+  const diceImages = [d1, d2, d3, d4, d5, d6];
   const snakes = {
     97: 78,
     95: 56,
