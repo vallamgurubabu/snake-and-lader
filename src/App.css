@@ -16,18 +16,18 @@ h1 {
 
 .board {
   display: grid;
-  background-image: url("./images/snake\ ladder.png"); /* Adjust the path */
-  background-size: cover; /* Ensures the image covers the board area */
-  background-position: center; /* Center the background image */
-  background-repeat: no-repeat; /* Prevents image repetition */
-  grid-template-columns: repeat(10, 50px); /* 10 columns */
+  background-image: url("./images/snake\ ladder.png"); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  grid-template-columns: repeat(10, 50px); 
   grid-gap: 2px;
   justify-content: center;
   margin: 20px auto;
-  border: 5px solid #333; /* Adds a visible border around the board */
-  box-sizing: border-box; /* Ensures the border is included in the element’s total width/height */
-  width: 520px; /* Adjust width to fit 10 columns with gap and border */
-  height: 520px; /* Adjust height to make the board a square */
+  border: 5px solid #333; 
+  box-sizing: border-box; 
+  width: 520px; 
+  height: 520px; 
 }
 
 .cell {
@@ -67,38 +67,38 @@ h1 {
 /* Responsive Styles */
 @media (max-width: 768px) {
   .board {
-    width: 90vw; /* Full width on mobile */
-    height: auto; /* Let the height adjust automatically */
-    grid-template-columns: repeat(10, 8.5vw); /* Responsive columns */
-    grid-gap: 1px; /* Smaller gaps */
+    width: 90vw; 
+    height: auto; 
+    grid-template-columns: repeat(10, 8.5vw); 
+    grid-gap: 1px; 
   }
 
   .cell {
-    width: 8vw; /* Cell width */
-    height: 8vw; /* Cell height */
+    width: 8vw; 
+    height: 8vw; 
   }
 
   .player1 img,
   .player2 img {
-    width: 6vw; /* Responsive player size */
+    width: 6vw; 
     height: 6vw;
   }
 
   h1 {
-    font-size: 1.8em; /* Smaller heading on mobile */
+    font-size: 1.8em; 
   }
 
   .winner {
-    font-size: 1.2em; /* Smaller winner text */
+    font-size: 1.2em; 
   }
 }
 
 @media (max-width: 480px) {
   h1 {
-    font-size: 1.5em; /* Further decrease heading size */
+    font-size: 1.5em; 
   }
 
   .game-info {
-    margin-top: 10px; /* Reduce margin on mobile */
+    margin-top: 10px; 
   }
 }

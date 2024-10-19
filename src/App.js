@@ -7,6 +7,7 @@ import d4 from './images/dice-six-faces-four.png';
 import d5 from './images/dice-six-faces-five.png';
 import d6 from './images/dice-six-faces-six.png';
 import snakeSound from './sounds/snake-hiss-95241.mp3'
+import bgaudio from './sounds/game-music-loop-6-144641.mp3'
 
 function App() {
   const [positions, setPositions] = useState([0, 0]);
@@ -15,6 +16,7 @@ function App() {
   const [winner, setWinner] = useState(''); 
   const diceImages = [d1, d2, d3, d4, d5, d6];
   const audio = new Audio(snakeSound);
+  const bgm = new Audio(bgaudio);
   const snakes = {
     97: 78,
     95: 56,
@@ -44,6 +46,7 @@ function App() {
   };
  
   const movePlayer = (player, dice) => {
+    
     const newPositions = [...positions];
     const playerIndex = player - 1;
     newPositions[playerIndex] += dice;
@@ -58,6 +61,7 @@ function App() {
 
     // Check for winner (if position 100 or greater)
     if (newPositions[playerIndex] >= 100) {
+      bgm.play();
       setWinner(`Player ${player} Wins!`);
     }
 
@@ -119,6 +123,7 @@ function App() {
           </div>
         ))}
       </div>
+
       <div className="game-info">
         <p>Player {currentPlayer}'s Turn</p>
         {winner && <p className="winner">{winner}</p>}
